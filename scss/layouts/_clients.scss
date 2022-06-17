@@ -1,0 +1,50 @@
+.clients {
+    background-color: var(--third-text-color);
+
+    &-title {
+            margin-bottom: 50px;
+        }
+
+    &-list {
+        display: flex;
+        margin: calc(-1 * var(--card-list-gap));
+    }
+
+    &-item {
+        margin: var(--card-list-gap);
+        width: calc(100% - (12 * var(--card-list-gap) / 6));
+    }
+
+    &-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 170px;
+        height: 92px;
+        border: var(--clients-border);
+        border-radius: 4px;
+        color: var(--social-icon-color);
+        transition: border-color var(--main-effect), color var(--main-effect);
+    }
+
+    &-icon {
+        fill: currentColor;
+    }
+
+    &-link:hover,
+    &-link:focus {
+        border-color: var(--accent-color);
+        color: var(--accent-color);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

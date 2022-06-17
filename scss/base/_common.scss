@@ -1,0 +1,61 @@
+body {
+    background-color: var(--third-text-color);
+    color: var(--main-text-color);
+    font-family: roboto, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+header {
+    border-bottom: 1px solid #ececec;
+}
+
+address {
+    font-style: normal;
+    margin-top: 20px;
+}
+
+footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section {
+    padding: 94px 0;
+    &-title {
+        color: var(--secondary-text-color);
+        font-size: 36px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &-name {
+        color: var(--secondary-text-color);
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 500;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    &-profession {
+        color: var(--main-text-color);
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 400;
+        padding-bottom: 0;
+        margin-bottom: 16px;
+    }
+    &-name,
+    &-profession {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+
+

@@ -1,0 +1,58 @@
+.whatWeDo {
+    padding-top: 0;
+    padding-bottom: 94px;
+    
+    &__boxes {
+        display: flex;
+        margin-top: 50px;
+        margin-bottom: 0;
+        }
+    
+    &__box {
+        position: relative;
+        margin-right: 30px;
+        max-width: 100%;
+        height: auto;
+        }
+
+    &__boxes-title {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 27px 0;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.17;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--third-text-color);
+        background-color: rgba(47, 48, 58, 0.8);
+        }
+    
+    &__box::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 70px;
+        /* background-color: rgba(47, 48, 58, 0.8); */
+    }
+    
+    &__box:last-child {
+        margin-right: 0px;
+        }
+}
+
+
+
+
+
+
+
+
+
+
