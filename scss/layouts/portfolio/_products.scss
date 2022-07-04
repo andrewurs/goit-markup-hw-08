@@ -1,95 +1,109 @@
-.product {
-    list-style: none;
+.pictures {
+    @media screen and (min-width: 768px) {
+        @include FlexWrap();
+        margin: -15px;
+    }
+}
+
+.pictures__item {
+    @media screen and (max-width: 767px) {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        flex-basis: calc((100% - 60px) / 2);
+        margin: 15px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        flex-basis: calc((100% - 120px) / 3);
+    }
+}
+
+.pictures__thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.pictures__overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(101%);
+    transition: transform $TimingFunction;
+}
+
+.pictures__overlay--text {
+    position: absolute;
+    top: 77px;
+    left: 24px;
+    text-align: start;
+    @include FontSize(18px, 1.56);
+    color: $WhiteTextColor;
+
+    @media screen and (max-width: 479px) {
+        top: 25px;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 306px;
+        top: 49px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 322px;
+        top: 63px;
+    }
+}
+
+.pictures__link {
     display: flex;
-    flex-wrap: wrap;
-    margin: calc(-1 * var(--card-list-gap));
+    flex-direction: column;
+    height: 100%;
 
-    &-img {
-        display: block;
+    &:hover,
+    &:focus {
+        @extend %box-shadow-portfolio;
+        transition: box-shadow $TimingFunction;
     }
 
-    &-name {
-        color: var(--secondary-text-color);
-        font-size: 18px;
-        line-height: 2;
-        font-weight: 700;
-        margin-bottom: 4px;
-    }
-
-    &-sphere {
-        color: var(--main-text-color);
-        font-size: 16px;
-        line-height: 1.9;
-        font-weight: 400;
-        margin: 0;
-    }
-
-    &-card {
-        margin: var(--card-list-gap);
-        flex-basis: calc(100% / 3 - 2 * var(--card-list-gap));
-        flex-basis: calc((100% - 90px) / 3);
-    }
-
-    &-card:nth-last-child(-n + 3) {
-        margin-bottom: 0px;
+    &:hover .pictures__overlay,
+    &:focus .pictures__overlay {
+        transform: translateY(0);
     }
 }
 
-
-.card-content {
+.pictures__box {
     padding: 20px 24px;
-    border: var(--card-border);
-    border-top: 0;
+    border: 1px solid #eeeeee;
+    flex-grow: 1;
 }
 
+.pictures__title {
+    margin-bottom: 4px;
+    color: $SecondTextColor;
+    @include FontSize(18px, 2);
+    letter-spacing: 0.06em;
 
-.portfolio {
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    &-buttons {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 50px;
-        margin-top: 0;
+    @media screen and (min-width: 768px) {
+        width: 304px;
     }
 
-    &-overlay {
-        position: absolute;
-        width: 370px;
-        height: 294px;
-        font-size: 18px;
-        line-height: 1.56;
-        color: var(--third-text-color);
-        background-color: rgba(33, 150, 243, 0.9);
-        padding: 63px 24px;
-        transition: transform var(--main-effect);
-    }
-
-    &-wrapper {
-        position: relative;
-        overflow: hidden;
-    }
-
-    &-link:hover .portfolio-overlay,
-    &-link:focus .portfolio-overlay {
-        transform: translateY(-100%);
-    }
-
-    &-link:hover,
-    &-link:focus {
-        box-shadow: var(--portfolio-item-shadow);
-    }
-
-    &-link {
-        display: block;
-        transition: box-shadow var(--main-effect);
+    @media screen and (min-width: 1200px) {
+        width: 320px;
     }
 }
 
+.pictures__text {
+    @include FontSize(16px, 1.88);
+    color: $MainTextColor;
+}
 
 
 

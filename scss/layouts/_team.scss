@@ -1,66 +1,81 @@
+.section--background {
+    background-color: $BackgroundBoxLight;
+}
+
 .team {
-    background-color: #f5f4fa;
-    display: flex;
-    margin-top: 0;
-    margin-bottom: 0;
+    @media screen and (min-width: 768px) {
+        @include FlexWrap();
+        margin: -15px;
+    }
+}
 
-    &-mates {
-            display: flex;
+.team__item {
+    @extend %box-shadow-team;
+
+    @media screen and (max-width: 767px) {
+        &:not(:last-child) {
+            margin-bottom: 30px;
         }
-
-    &-card {
-        padding: calc(2 * var(--card-list-gap)) 0;
     }
 
-    &-mate {
-        width: 270px;
-        /* height: 368px; */
-        margin-right: 30px;
-        background-color: var(--third-text-color);
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-            0px 2px 1px rgba(0, 0, 0, 0.2);
-        border-radius: 0px 0px 4px 4px;
-        margin-top: 0;
-        margin-bottom: 0;
-        }
-
-    &-mate:last-child {
-        margin-right: 0;
+    @media screen and (min-width: 768px) {
+        flex-basis: calc((100% - 60px) / 2);
+        margin: 15px;
     }
 
-    &-mate:last-child {
-        padding-right: 0px;
+    @media screen and (min-width: 1200px) {
+        flex-basis: calc((100% - 120px) / 4);
     }
+}
 
-    &-icons-list {
-        display: flex;
-        justify-content: center;
-    }
+.team__box {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 0 0 4px 4px;
+    background-color: $WhiteTextColor;
+}
 
-    &-icon-link {
-        display: flex;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        color: var(--social-icon-color);
-        transition: background-color var(--main-effect), color var(--main-effect);
-    }
+.team__title {
+    @include FontSize(16px, 1.19);
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: $SecondTextColor;
+}
 
-    &-icon-link:hover,
-    &-icon-link:focus {
-        background-color: var(--accent-color);
-        color: var(--third-text-color);
-    }
+.team__text {
+    margin-bottom: 16px;
+    @include FontSize(16px, 1.19);
+    text-align: center;
+    color: $MainTextColor;
+}
 
-    &-icon {
+.social {
+    @include FlexJustiAlign($align: none);
+
+    &__icon {
         fill: currentColor;
     }
 }
 
-.team-icon-item+.team-icon-item {
-    margin-left: 10px;
+.social__item {
+    &+& {
+        margin-left: 10px;
+    }
+}
+
+.social__link {
+    @extend %social;
+    @include FlexJustiAlign();
+    background-color: $WhiteTextColor;
+    color: $ColorIconMain;
+    transition: color $TimingFunction, background-color $TimingFunction;
+
+    &:hover,
+    &:focus {
+        background-color: $AccentColor;
+        color: $WhiteTextColor;
+    }
 }
 
 

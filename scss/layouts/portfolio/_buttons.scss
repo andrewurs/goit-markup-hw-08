@@ -1,38 +1,52 @@
-.button-secondary {
-    color: var(--secondary-text-color);
-    background-color: #f5f4fa;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1.6;
-    font-weight: 500;
-    height: 38px;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    padding: 6px 22px;
-    transition: box-shadow var(--main-effect), color var(--main-effect),
-        background-color var(--main-effect);
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    margin-top: -15px;
 
-    &.active {
-            box-shadow: var(--filter-button-shadow);
-            color: var(--third-text-color);
-            background-color: var(--accent-color);
-        }
+    @media screen and (min-width: 768px) {
+        @include FlexJustiAlign();
+        margin-bottom: 30px;
+        margin-top: 0;
+    }
 
-    &:hover,
-    &:focus {
-        background-color: var(--accent-color);
-        color: var(--third-text-color);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @media screen and (min-width: 1200px) {
+        @include FlexJustiAlign($align: null);
+        margin-bottom: 50px;
     }
 }
 
-.button-sec {
+.filter__item {
+    margin-top: 15px;
     margin-right: 8px;
 
     &:last-child {
-            margin-right: 0;
-        }
+        margin-right: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-top: 0;
+    }
+}
+
+.filter__button {
+    @extend %btn;
+    padding: 6px 22px;
+    color: $SecondTextColor;
+    background-color: $BackgroundBoxLight;
+    font-weight: 500;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+    transition: color $TimingFunction, background-color $TimingFunction,
+        box-shadow $TimingFunction;
+
+    &:focus,
+    &:hover {
+        color: $WhiteTextColor;
+        background-color: $AccentColor;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
 }
 
 

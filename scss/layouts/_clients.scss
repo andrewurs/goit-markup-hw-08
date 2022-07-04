@@ -1,38 +1,57 @@
-.clients {
-    background-color: var(--third-text-color);
+.section__title--poz {
+    margin-bottom: 30px;
 
-    &-title {
-            margin-bottom: 50px;
-        }
-
-    &-list {
-        display: flex;
-        margin: calc(-1 * var(--card-list-gap));
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
     }
+}
 
-    &-item {
-        margin: var(--card-list-gap);
-        width: calc(100% - (12 * var(--card-list-gap) / 6));
-    }
+.client {
+    @include FlexWrap();
+    margin: -15px;
 
-    &-link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 170px;
-        height: 92px;
-        border: var(--clients-border);
-        border-radius: 4px;
-        color: var(--social-icon-color);
-        transition: border-color var(--main-effect), color var(--main-effect);
-    }
-
-    &-icon {
+    &__icon {
         fill: currentColor;
     }
+}
 
-    &-link:hover,
-    &-link:focus {
+.client__item {
+    flex-basis: calc((100% - 60px) / 2);
+    margin: 15px;
+
+    @media screen and (min-width: 768px) {
+        flex-basis: calc((100% - 120px) / 3);
+    }
+
+    @media screen and (min-width: 1200px) {
+        flex-basis: calc((100% - 180px) / 6);
+    }
+}
+
+.client__link {
+    width: 210px;
+    @include FlexJustiAlign();
+    height: 92px;
+    border: 1px solid var(--social-icon-color);
+    border-radius: 4px;
+    color: var(--social-icon-color);
+    background-color: var(--third-text-color);
+    transition: color var(--main-effect), border-color var(--main-effect);
+
+    @media screen and (max-width: 479px) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 226px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 170px;
+    }
+
+    &:focus,
+    &:hover {
         border-color: var(--accent-color);
         color: var(--accent-color);
     }

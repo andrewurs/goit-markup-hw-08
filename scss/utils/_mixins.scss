@@ -1,0 +1,15 @@
+@mixin FlexJustiAlign($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin FlexWrap($wrap: wrap) {
+    display: flex;
+    flex-wrap: $wrap;
+}
+
+@mixin FontSize($size, $line-height) {
+    font-size: $size;
+    line-height: $line-height;
+}
